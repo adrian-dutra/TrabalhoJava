@@ -47,4 +47,9 @@ public class Paciente extends Pessoa{
 	public void setHistoricoMedico(Consulta consulta) {
 		this.historicoMedico.add(consulta);
 	}
+	
+	public void atualizaCadastro(String endereco, int numero, List<Consulta> historicoMedico){
+		super.atualizaCadastro(endereco,numero);
+		this.historicoMedico = historicoMedico;
+	}
 }
