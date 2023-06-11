@@ -1,5 +1,5 @@
 package TrabsonJava;
-acabstract class Pessoa {
+abstract class Pessoa {
 	
 	private String nome, CPF, genero, endereco;
     private int idade, numero;
