@@ -3,6 +3,7 @@ package TrabsonJava;
 import java.util.List;
 import java.util.Collections;   
 import java.util.ArrayList;
+import TrabsonJava.Consulta;
 
 public class Paciente extends Pessoa{
 
@@ -12,12 +13,17 @@ public class Paciente extends Pessoa{
 		super(nome, CPF, idade, genero, numero, endereco );
 		this.historicoMedico = new ArrayList<>();
 	}
+	public void atualizaCadastro(){
 
-	public void agendaConsulta(Medico medico, String data, String hora){
-		Consulta consulta = new Consulta(this, medico, data, hora);
+
+
+	}
+
+	public void agendaConsulta(Paciente paciente, Medico medico, String data, String hora){
+		Consulta consulta = new Consulta(paciente, medico, data, hora, null, null);
 		//implementar consulta
 		System.out.println("Consulta agendada para o dia" + data +"às"+ hora + "com o doutor" + consulta.getMedico().getNome());
-	}
+	} 
 
 	public void cancelarConsulta(Consulta consulta,Medico medico, String data, String hora){
 		//implementar cancelamento
@@ -38,7 +44,7 @@ public class Paciente extends Pessoa{
 	public List<Consulta> getHistoricoMedico() {
 		return historicoMedico;
 	}
-	public void setHistoricoMedico(List<Consulta> historicoMedico) {
-		this.historicoMedico = historicoMedico;
+	public void setHistoricoMedico(Consulta consulta) {
+		this.historicoMedico.add(consulta);
 	}
 }

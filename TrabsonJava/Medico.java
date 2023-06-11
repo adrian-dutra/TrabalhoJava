@@ -20,8 +20,7 @@ public class Medico extends Pessoa{
         Consulta consulta = new Consulta(paciente, this, data, hora, sintomas, sintomas);
 
         //implementar consulta
-        
-        paciente.historicoMedico.add(consulta);
+        paciente.setHistoricoMedico(consulta);
         this.consultasAgendadas.add(consulta);
         System.out.println("Consulta realizada");
     }

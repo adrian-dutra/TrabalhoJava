@@ -1,11 +1,11 @@
 package TrabsonJava;
 
-abstract class Consulta {
+public class Consulta {
     private Paciente paciente;
     private Medico medico;
     private String data, hora, Sintomas, diagnostico;
 
-    
+    public Consulta(){}
     public Consulta(Paciente paciente, Medico medico, String data, String hora, String Sintomas, String diagnostico){
         this.paciente = paciente;
         this.medico = medico;
