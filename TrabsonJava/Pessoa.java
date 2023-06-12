@@ -1,12 +1,12 @@
 package TrabsonJava;
 abstract class Pessoa {
 	
-	private String nome, CPF, genero, endereco;
-    private int idade, numero;
+	private String nome, CPF, numero, genero, endereco;
+    private int idade;
  
     public Pessoa(){}
     
-    public Pessoa (String nome, String CPF, int idade, String genero, int numero, String endereco){
+    public Pessoa (String nome, String CPF, int idade, String genero, String numero, String endereco){
         
         this.nome = nome;
         this.CPF = CPF;
@@ -16,7 +16,11 @@ abstract class Pessoa {
         this.endereco = endereco;
     }
 
-	public void atualizaCadastro(String enderecoN, int numeroN){
+	public void exibirDados(){
+        System.out.println("Nome: " + nome + "\n Idade: " + idade + " \n Gênero: " + genero + " \n Número: " + numero + " \n Endereço: " + endereco);
+    }
+
+	public void atualizaCadastro(String enderecoN, String numeroN){
 		this.endereco = enderecoN;
 		this.numero = numeroN;
 	}
@@ -61,11 +65,11 @@ abstract class Pessoa {
 		this.idade = idade;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 }

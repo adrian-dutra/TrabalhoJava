@@ -1,9 +1,10 @@
 package TrabsonJava;
 
-abstract class Consulta {
+public class Consulta{
     private Paciente paciente;
     private Medico medico;
     private String data, hora, Sintomas, diagnostico;
+    private boolean agendado;
 
     
     public Consulta(Paciente paciente, Medico medico, String data, String hora, String Sintomas, String diagnostico){
@@ -15,7 +16,16 @@ abstract class Consulta {
         this.diagnostico = diagnostico;
     }
 
+    public void consultaAgendada(){
+        this.agendado = true;
+    }
 
+    public boolean getAgendado(){
+        return agendado;
+    }
+    public void setAgendado(boolean agendado){
+        this.agendado = agendado;
+    }
     public Paciente getPaciente() {
         return paciente;
     }
