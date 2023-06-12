@@ -35,6 +35,9 @@ public class Paciente extends Pessoa{
             	System.out.println("Consulta cancelada para o dia " + consultaAgendada.getData() + " às " + consultaAgendada.getHora() + " com a Doutora " + consultaAgendada.getMedico().getNome());
      		}
 			consultaAgendada.setAgendado(false);
+			int indiceUltimaConsulta = historicoMedico.size() - 1;
+            historicoMedico.remove(indiceUltimaConsulta);
+			medico.removerarConsulta(consultaAgendada);
 		}
 		else{
 			System.out.println("Consulta não agendada, você precisa agendar uma consulta primeiro");
@@ -73,6 +76,9 @@ public class Paciente extends Pessoa{
 	@Override
     public void exibirDados(){
         super.exibirDados();
-        System.out.println("Histórico Médico: " + historicoMedico);
+		System.out.println("Histórico Médico: ");
+		for(Consulta consulta : historicoMedico){
+			System.out.println("Data: " + consulta.getData() + " Sintomas apresentados: " + consulta.getSintomas() + " Diagnóstico: " + consulta.getDiagnostico());
+		}
     }
 }

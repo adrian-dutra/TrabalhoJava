@@ -22,6 +22,7 @@ public class Main {
                     switch(escolhaPaciente){
 
                         case 1:
+                        menu.menuConsultandoPaciente();
                         System.out.println("Data:");
                         input.nextLine();
                         Data = input.nextLine();
@@ -41,10 +42,10 @@ public class Main {
 
                         case 4:
                         System.out.println("Atualização cadastral");
-                        System.out.println("Digite novo endereço:");
+                        System.out.println("Caso for alterar digite o novo endereço, ou digite o atual:");
                         input.nextLine();
                         Endereco = input.nextLine();
-                        System.out.println("Digite novo Número");
+                        System.out.println("Caso for alterar digite o novo Número, ou digite o atual:");
                         Numero = input.nextLine();
                         System.out.println("");
                         paciente.atualizaCadastro(Endereco, Numero);
@@ -65,6 +66,7 @@ public class Main {
                     switch(escolhaMedico){
 
                         case 1:
+                        menu.menuConsultandoPaciente();
                         input.nextLine();
                         System.out.println("Data:");
                         Data = input.nextLine();
@@ -93,7 +95,7 @@ public class Main {
                         System.out.println("Caso for alterar digite o novo Horário de Trabalho, ou digite o atual:");
                         horarioTrabalho = input.nextLine();
                         System.out.println("");
-                        //medico.atualizaCadastro(Endereco, Numero, especialidade, horarioTrabalho);
+                        medico.atualizaCadastro(Endereco, Numero, especialidade, horarioTrabalho);
                         break;
 
                         case 4:

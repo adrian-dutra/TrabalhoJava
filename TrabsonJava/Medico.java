@@ -30,8 +30,12 @@ public class Medico extends Pessoa{
         return prontuario;
     }
 
-    public void adicionarConsulta(Consulta consulta) {
+    public void adicionarConsulta(Consulta consulta){
         consultasAgendadas.add(consulta);
+    }
+
+    public void removerarConsulta(Consulta consulta){
+        consultasAgendadas.remove(consulta);
     }
 
     public void olharAgenda(){
@@ -84,6 +88,6 @@ public class Medico extends Pessoa{
     @Override
     public void exibirDados() {
         super.exibirDados();
-        System.out.println(" Especialidade: " + especialidade + "\n Horário de trabalho: " + horarioTrabalho);
+        System.out.println("Especialidade: " + especialidade + "\nHorário de trabalho: " + horarioTrabalho);
     }
 }

@@ -17,7 +17,7 @@ abstract class Pessoa {
     }
 
 	public void exibirDados(){
-        System.out.println("Nome: " + nome + "\n Idade: " + idade + " \n Gênero: " + genero + " \n Número: " + numero + " \n Endereço: " + endereco);
+        System.out.println("Nome: " + nome + "\nIdade: " + idade + " \nGênero: " + genero + " \nNúmero: " + numero + " \nEndereço: " + endereco);
     }
 
 	public void atualizaCadastro(String enderecoN, String numeroN){
