@@ -34,7 +34,7 @@ public class Medico extends Pessoa{
         if (!consultasAgendadas.isEmpty()){
             System.out.println("Agenda:");
             for (Consulta consulta : consultasAgendadas){
-                System.out.println("Data: " + consulta.getData() + "Paciente: " + consulta.getPaciente().getNome());
+                System.out.println("Data: " + consulta.getData() + " Hora:" + consulta.getHora() + " Paciente: " + consulta.getPaciente().getNome());
             }
         } else{
             System.out.println("Nenhuma consulta agendada");
@@ -63,7 +63,7 @@ public class Medico extends Pessoa{
 
     //Polimorfismo dinâmico
 
-    public void atualizaCadastro(String endereco, String numero, List<Consulta> historicoMedico, String especialidade, String horarioTrabalho, List<Consulta> consultasAgendadas) {
+    public void atualizaCadastro(String endereco, String numero, String especialidade, String horarioTrabalho, List<Consulta> consultasAgendadas) {
         super.atualizaCadastro(endereco, numero);
         this.consultasAgendadas = consultasAgendadas;
         this.especialidade = especialidade;
@@ -73,6 +73,6 @@ public class Medico extends Pessoa{
     @Override
     public void exibirDados() {
         super.exibirDados();
-        System.out.println("Nome: " + super.getNome() + "\n Idade: " + super.getIdade() + " \n Gênero: " + super.getGenero() + " \n Número: " + super.getNumero() + " \n Endereço: " + super.getEndereco() + "\n Especialidade:" + especialidade + "\n Horário de trabalho:" + horarioTrabalho);
+        System.out.println(" Especialidade: " + especialidade + "\n Horário de trabalho: " + horarioTrabalho);
     }
 }
