@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String Data, Hora, Sintomas, Diagnostico, Endereco, Numero;
+        String Data, Hora, Sintomas, Diagnostico, Endereco, Numero, especialidade, horarioTrabalho;
         int escolha, escolhaPaciente, escolhaMedico;
         Scanner input = new Scanner(System.in);
         Menus menu = new Menus();
@@ -22,14 +22,12 @@ public class Main {
                     switch(escolhaPaciente){
 
                         case 1:
-                        System.out.println("Você está agendando uma consulta !");
-                        System.out.println("==================================");
-                        System.out.println("para agendar consulta digite as informações:");
                         System.out.println("Data:");
                         input.nextLine();
                         Data = input.nextLine();
                         System.out.println("Hora:");
                         Hora = input.nextLine();
+                        System.out.println("");
                         paciente.agendaConsulta(paciente, medico, Data, Hora);
                         break;
 
@@ -43,11 +41,12 @@ public class Main {
 
                         case 4:
                         System.out.println("Atualização cadastral");
-                        System.out.println("Digite novo endereço");
+                        System.out.println("Digite novo endereço:");
                         input.nextLine();
                         Endereco = input.nextLine();
                         System.out.println("Digite novo Número");
                         Numero = input.nextLine();
+                        System.out.println("");
                         paciente.atualizaCadastro(Endereco, Numero);
                         break;
 
@@ -66,17 +65,15 @@ public class Main {
                     switch(escolhaMedico){
 
                         case 1:
-                        System.out.println("Você está consultando um paciente!");
-                        System.out.println("==================================");
-                        System.out.println("para começar a consulta digite a data e hora:");
                         input.nextLine();
                         System.out.println("Data:");
                         Data = input.nextLine();
                         System.out.println("Hora:");
                         Hora = input.nextLine();
-                        System.out.println("Pergunte os sintomas:");
+                        System.out.println("Escreva os sintomas:");
                         Sintomas = input.nextLine();
                         Diagnostico = "Virose";
+                        System.out.println("");
                         medico.consultarPaciente(paciente, Data, Hora, Sintomas , Diagnostico);
                         break;
 
@@ -85,7 +82,18 @@ public class Main {
                         break;
 
                         case 3:
-                        //medico.atualizaCadastro(Data, Sintomas, null, Diagnostico, Hora, null);
+                        System.out.println("Atualização cadastral");
+                        System.out.println("Caso for alterar digite o novo endereço, ou digite o atual:");
+                        input.nextLine();
+                        Endereco = input.nextLine();
+                        System.out.println("Caso for alterar digite o novo Número, ou digite o atual:");
+                        Numero = input.nextLine();
+                        System.out.println("Caso for alterar digite a nova Especialidade, ou digite a atual:");
+                        especialidade = input.nextLine();
+                        System.out.println("Caso for alterar digite o novo Horário de Trabalho, ou digite o atual:");
+                        horarioTrabalho = input.nextLine();
+                        System.out.println("");
+                        //medico.atualizaCadastro(Endereco, Numero, especialidade, horarioTrabalho);
                         break;
 
                         case 4:

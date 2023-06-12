@@ -1,7 +1,6 @@
 package TrabsonJava;
 
 import java.util.List;
-//import java.util.Collections;   
 import java.util.ArrayList;
 
 public class Paciente extends Pessoa{
@@ -24,6 +23,8 @@ public class Paciente extends Pessoa{
             System.out.println("Consulta agendada para o dia " + consultaAgendada.getData() + " às " + consultaAgendada.getHora() + " com a Doutora " + consultaAgendada.getMedico().getNome());
         }
 		this.historicoMedico.add(consultaAgendada);
+		medico.adicionarConsulta(consultaAgendada);
+
 	} 
 
 	public void cancelarConsulta(Consulta consulta,Medico medico){

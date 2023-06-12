@@ -1,7 +1,6 @@
 package TrabsonJava;
 
 import java.util.List;
-//import java.util.Collections;
 import java.util.ArrayList;
 
 public class Medico extends Pessoa{
@@ -23,6 +22,7 @@ public class Medico extends Pessoa{
         
         paciente.setHistoricoMedico(consulta);
         this.consultasAgendadas.add(consulta);
+        System.out.println("O seu diagnóstico é: " + diagnostico);
         System.out.println("Consulta realizada");
         prontuario.adicionarConsulta(consulta);
         prontuario.adicionarExameRealizado(diagnostico);
@@ -30,11 +30,15 @@ public class Medico extends Pessoa{
         return prontuario;
     }
 
+    public void adicionarConsulta(Consulta consulta) {
+        consultasAgendadas.add(consulta);
+    }
+
     public void olharAgenda(){
         if (!consultasAgendadas.isEmpty()){
             System.out.println("Agenda:");
             for (Consulta consulta : consultasAgendadas){
-                System.out.println("Data: " + consulta.getData() + " Hora:" + consulta.getHora() + " Paciente: " + consulta.getPaciente().getNome());
+                System.out.println("Data: " + consulta.getData() + " Hora: " + consulta.getHora() + " Paciente: " + consulta.getPaciente().getNome());
             }
         } else{
             System.out.println("Nenhuma consulta agendada");
@@ -61,11 +65,18 @@ public class Medico extends Pessoa{
         this.horarioTrabalho = horarioTrabalho;
     }
 
+    public List<Consulta> getConsultasAgendadas() {
+        return consultasAgendadas;
+    }
+    public void setConsultasAgendadas(List<Consulta> consultasAgendadas) {
+        this.consultasAgendadas = consultasAgendadas;
+    }
+
     //Polimorfismo dinâmico
 
-    public void atualizaCadastro(String endereco, String numero, String especialidade, String horarioTrabalho, List<Consulta> consultasAgendadas) {
+    public void atualizaCadastro(String endereco, String numero, String especialidade, String horarioTrabalho) {
         super.atualizaCadastro(endereco, numero);
-        this.consultasAgendadas = consultasAgendadas;
+        //this.consultasAgendadas = consultasAgendadas;
         this.especialidade = especialidade;
         this.horarioTrabalho = horarioTrabalho;
     }
