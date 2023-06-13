@@ -23,6 +23,7 @@ public class Medico extends Pessoa{
         paciente.setHistoricoMedico(consulta);
         this.consultasAgendadas.add(consulta);
         System.out.println("O seu diagnóstico é: " + diagnostico);
+        System.out.println("");
         System.out.println("Consulta realizada");
         prontuario.adicionarConsulta(consulta);
         prontuario.adicionarExameRealizado(diagnostico);

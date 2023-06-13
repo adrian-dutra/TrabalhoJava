@@ -22,7 +22,7 @@ public class Main {
                     switch(escolhaPaciente){
 
                         case 1:
-                        menu.menuConsultandoPaciente();
+                        menu.menuAgendaConsulta();
                         System.out.println("Data:");
                         input.nextLine();
                         Data = input.nextLine();
