@@ -9,7 +9,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Menus menu = new Menus();
         Paciente paciente = new Paciente("Adriano Araújo Dutra", "052.025.515-52", 20, "Masculino", "4002-8922", "Av. Padre Cacique, N° 891");
-        Medico medico = new Medico("Maria Silva Barbosa", "132.645.515-05", 50, "Feminino", "0800-4004", "Av. Beira Rio, N° 1909", "Médica da Familia", "08:00 até 17:00");
+        Medico medico = new Medico("Maria Silva Barbosa", "132.645.515-05", 50, "Feminino", "0800-4004", "Av. Beira Rio, N° 1909", "Médica da Familia", "08:00 até 17:00", "4545");
         do {
             menu.menuPrincipal();
             escolha = input.nextInt();

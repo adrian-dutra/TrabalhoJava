@@ -6,13 +6,15 @@ import java.util.ArrayList;
 public class Medico extends Pessoa{
     private String especialidade;
     private String horarioTrabalho;
+    private String CRM;
     private List<Consulta> consultasAgendadas;
 
     Medico(String nome, String CPF, int idade, String genero, String numero, String endereco, String especialidade,
-            String horarioTrabalho){
+            String horarioTrabalho, String CRM){
         super(nome, CPF, idade, genero, numero, endereco);
         this.especialidade = especialidade;
         this.horarioTrabalho = horarioTrabalho;
+        this.CRM = CRM;
         this.consultasAgendadas = new ArrayList<>();
     }
 
@@ -23,6 +25,8 @@ public class Medico extends Pessoa{
         paciente.setHistoricoMedico(consulta);
         this.consultasAgendadas.add(consulta);
         System.out.println("O seu diagnóstico é: " + diagnostico);
+        System.out.println("");
+        System.out.println(this.getNome() + "\nCRM: "+CRM);
         System.out.println("");
         System.out.println("Consulta realizada");
         prontuario.adicionarConsulta(consulta);
@@ -80,7 +84,6 @@ public class Medico extends Pessoa{
 
     public void atualizaCadastro(String endereco, String numero, String especialidade, String horarioTrabalho) {
         super.atualizaCadastro(endereco, numero);
-        //this.consultasAgendadas = consultasAgendadas;
         this.especialidade = especialidade;
         this.horarioTrabalho = horarioTrabalho;
     }
