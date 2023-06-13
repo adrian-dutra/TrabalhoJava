@@ -26,7 +26,6 @@ public class Medico extends Pessoa{
         System.out.println("Consulta realizada");
         prontuario.adicionarConsulta(consulta);
         prontuario.adicionarExameRealizado(diagnostico);
-
         return prontuario;
     }
 
